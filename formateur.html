@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+<link href="./formateur.css" rel="stylesheet">
+
+    <title>Espace Formateur</title>
+    <style>
+        .reponse { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Réponses des stagiaires</h1>
+    <div id="liste-reponses"></div>
+
+    <script>
+        // 1. Récupère les données du localStorage
+        const reponses = JSON.parse(localStorage.getItem('reponsesStagiaires')) || [];
+        const container = document.getElementById('liste-reponses');
+
+        // 2. Affiche chaque réponse
+        if (reponses.length === 0) {
+            container.innerHTML = "<p>Aucune réponse pour le moment.</p>";
+        } else {
+            let html = '';
+            reponses.forEach((item, index) => {
+                html += `
+                <div class="reponse">
+                    <h3>Réponse #${index + 1}</h3>
+                    <p><strong>Nom :</strong> ${item.nom}</p>
+                    <p><strong>Date :</strong> ${item.date}</p>
+                    <p><strong>Réponse :</strong> ${item.reponse}</p>
+                </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+    </script>
+    <script src="/script.js"></script>
+</body>
+</html>

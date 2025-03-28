@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Stagiaire | PIE</title>
+    <!-- Polices Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href=".\includes\includes\admin\pages\stagiaire.css">
+    <!-- Icônes -->
+    <link rel="stylesheet" href="/includes/includes/admin/pages/stagiaire.css">
+</head>
+<body>
+    <div class="stagiaire-wrapper">
+        <!-- Carte 3D -->
+        <div class="stagiaire-card">
+            <!-- En-tête avec animation -->
+            <div class="card-header">
+                <div class="holographic-effect"></div>
+                <h1>
+                    <span class="title-gradient">Votre Progression</span>
+                    <span class="title-underline"></span>
+                </h1>
+                <p class="subtitle">Suivi personnalisé</p>
+            </div>
+
+            <!-- Formulaire avec micro-interactions -->
+            <form id="stagiaireForm" class="neon-form">
+                <!-- Groupe de champs animés -->
+                <div class="form-group floating-label">
+                    <input type="text" id="nom" required>
+                    <label for="nom"><i class="fas fa-user"></i> Nom complet</label>
+                    <div class="focus-line"></div>
+                </div>
+
+                <div class="form-group floating-label">
+                    <textarea id="objectifs" required></textarea>
+                    <label for="objectifs"><i class="fas fa-bullseye"></i> Objectifs</label>
+                    <div class="focus-line"></div>
+                </div>
+
+                <div class="form-group floating-label">
+                    <textarea id="difficultes" required></textarea>
+                    <label for="difficultes"><i class="fas fa-exclamation-circle"></i> Difficultés</label>
+                    <div class="focus-line"></div>
+                </div>
+
+                <!-- Bouton cybernétique -->
+                <button type="submit" class="cyber-button">
+                    <span class="button-text">Envoyer</span>
+                    <span class="button-glare"></span>
+                    <span class="button-particle"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./stagiaire.js"></script>
+</body>
+</html>

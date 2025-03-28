@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Tags - IKIGAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="containerr">
+        <img src="https://i.postimg.cc/SNz78Zhs/OIP-1.jpg" alt="Logo PIE" class="logo-pie">
+        <br><br><br><br><br><br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <!-- Même navbar que index.html -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tags.html">Mes Tags</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="collegues.html">Mots des Collègues</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reputation.html">Réputation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exemplaire.html">Devenir Exemplaire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="valeurs.html">Valeurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="causes.html">Causes</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Mes Tags Personnels</h1>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">1. Chacun écrit sur son cahier les 3 mots (tags) que vous voulez que les gens retiennent de vous</h2>
+                <div class="mb-3">
+                    <label for="tag1" class="form-label">1.1. Premier mot</label>
+                    <input type="text" class="form-control" id="tag1" placeholder="Entrez votre premier mot">
+                </div>
+                <div class="mb-3">
+                    <label for="tag2" class="form-label">1.2. Deuxième mot</label>
+                    <input type="text" class="form-control" id="tag2" placeholder="Entrez votre deuxième mot">
+                </div>
+                <div class="mb-3">
+                    <label for="tag3" class="form-label">1.3. Troisième mot</label>
+                    <input type="text" class="form-control" id="tag3" placeholder="Entrez votre troisième mot">
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">2. Quelles sont les actions du quotidien que vous faites aujourd'hui qui vous permettent de justifier cela ?</h2>
+                <table class="table table-bordered">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Mon Tag</th>
+                            <th>Action quotidienne qui prouve votre tag</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control tag-input" placeholder="Tag 1" readonly></td>
+                            <td><input type="text" class="form-control" placeholder="Décrivez votre action"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control tag-input" placeholder="Tag 2" readonly></td>
+                            <td><input type="text" class="form-control" placeholder="Décrivez votre action"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control tag-input" placeholder="Tag 3" readonly></td>
+                            <td><input type="text" class="form-control" placeholder="Décrivez votre action"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">3. Êtes-vous une personne de confiance ? Si oui, pourquoi ? Si non, pourquoi ?</h2>
+                <textarea class="form-control" rows="5" placeholder="Votre réponse..."></textarea>
+            </div>
+        </div>
+
+        <div class="text-center mb-5">
+            <button class="btn btn-primary btn-lg" id="saveTags">Enregistrer mes réponses</button>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <!-- Même footer que index.html -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Récupère les tags et les met dans le tableau
+        document.getElementById('saveTags').addEventListener('click', function() {
+            const tag1 = document.getElementById('tag1').value;
+            const tag2 = document.getElementById('tag2').value;
+            const tag3 = document.getElementById('tag3').value;
+            
+            const tagInputs = document.querySelectorAll('.tag-input');
+            tagInputs[0].value = tag1;
+            tagInputs[1].value = tag2;
+            tagInputs[2].value = tag3;
+            
+            alert('Vos tags ont été enregistrés!');
+            
+            // Ici vous pourriez ajouter du code pour sauvegarder dans localStorage ou une base de données
+        });
+    </script>
+</body>
+</html>
